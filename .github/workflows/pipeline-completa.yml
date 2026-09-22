@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         id: deps
         working-directory: app
-        run: npm ci
+        run: npm install
       
       - name: Lint NPM
         id: lint
