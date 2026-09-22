@@ -28,7 +28,7 @@ jobs:
       - name: Lint NPM
         id: lint
         working-directory: app
-        run: npm run lint --fix
+        run: npm run lint -- --fix
   
   unit:
     needs: lint
