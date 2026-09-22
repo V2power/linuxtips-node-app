@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "lint": "eslint src --max-warnings=0",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage --coverageReporters=json-summary --coverageDirectory=coverage && cp coverage/coverage-summary.json report.json"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --coverageReporters=json-summary --coverageDirectory=coverage && cp coverage/coverage-summary.json report.json"
   },
   "jest": {
     "testEnvironment": "node"

@@ -36,6 +36,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        id: deps
+        working-directory: app
+        run: npm install
       
       - name: Run unit tests
         id: test
@@ -48,6 +58,9 @@ jobs:
   
   docker:
     needs: unit
+    permissions:
+      contents: read
+      packages: write
     if: ${{ needs.unit.outputs.coverage >= 80 }}
     runs-on: ubuntu-latest
     env:
